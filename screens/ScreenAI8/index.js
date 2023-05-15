@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
+import { useState } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 const CreateAccountScreen = () => {
+  const navigation = useNavigation();
   const [selectedAccountType, setSelectedAccountType] = useState('');
 
   const handleAccountTypeSelection = accountType => {
@@ -21,7 +24,9 @@ const CreateAccountScreen = () => {
         <Text style={styles.accountTypeButtonText}>Business</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.createAccountButton}>
-        <Text style={styles.createAccountButtonText}>Create Account</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI9");
+      }}><Text style={styles.createAccountButtonText}>Create Account</Text></Pressable>
       </TouchableOpacity>
     </View>;
 };
