@@ -23,7 +23,7 @@ const LoginScreen = () => {
         <TextInput style={styles.input} placeholder="Password" secureTextEntry={true} value={password} onChangeText={setPassword} />
         <TouchableOpacity style={styles.button} onPress={handleLogin}>
           <Pressable onPress={() => {
-          navigation.navigate("ScreenAI9");
+          navigation.navigate("ScreenAI10");
         }}><Text style={styles.buttonText}>Log In</Text></Pressable>
         </TouchableOpacity>
         <TouchableOpacity onPress={handleForgotPassword}>
