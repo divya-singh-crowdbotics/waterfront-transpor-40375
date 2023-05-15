@@ -25,7 +25,7 @@ const CreateAccountScreen = () => {
       </TouchableOpacity>
       <TouchableOpacity style={styles.createAccountButton}>
         <Pressable onPress={() => {
-        navigation.navigate("ScreenAI9");
+        navigation.navigate("ScreenAI6");
       }}><Text style={styles.createAccountButtonText}>Create Account</Text></Pressable>
       </TouchableOpacity>
     </View>;
