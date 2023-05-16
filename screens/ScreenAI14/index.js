@@ -53,7 +53,7 @@ const JobsScreen = () => {
         </TouchableOpacity>
         <TouchableOpacity style={styles.navigationButton}>
           <Pressable onPress={() => {
-          navigation.navigate("ScreenAI24");
+          navigation.navigate("ScreenAI25");
         }}><Text style={styles.navigationButtonText}>Settings</Text></Pressable>
         </TouchableOpacity>
       </View>
