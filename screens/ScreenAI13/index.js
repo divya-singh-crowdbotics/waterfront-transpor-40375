@@ -1,8 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
 import { Pressable } from "react-native";
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
 
 const UploadDocumentsScreen = () => {
+  const navigation = useNavigation();
   const [selectedFile, setSelectedFile] = useState(null);
 
   const handleFileSelect = file => {
@@ -30,7 +32,9 @@ const UploadDocumentsScreen = () => {
         <Text style={styles.submitButtonText}>Submit</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.nextButton} onPress={() => handleNext()}>
-        <Pressable><Text style={styles.nextButtonText}>Next</Text></Pressable>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI14");
+      }}><Text style={styles.nextButtonText}>Next</Text></Pressable>
       </TouchableOpacity>
     </View>;
 };
