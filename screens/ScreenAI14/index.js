@@ -52,7 +52,9 @@ const JobsScreen = () => {
           <Text style={styles.navigationButtonText}>History</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.navigationButton}>
-          <Text style={styles.navigationButtonText}>Settings</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI24");
+        }}><Text style={styles.navigationButtonText}>Settings</Text></Pressable>
         </TouchableOpacity>
       </View>
     </View>;
