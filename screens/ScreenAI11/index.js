@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
+import { useState } from 'react';
 import { View, Text, TextInput, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 const UserProfileScreen = () => {
+  const navigation = useNavigation();
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
   return <View style={styles.container}>
       <View style={styles.imageContainer}>
-        <Image source={{
-        uri: 'https://tinyurl.com/42evm3m3'
-      }} style={styles.image} />
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI12");
+      }}><Image source={{
+          uri: 'https://tinyurl.com/42evm3m3'
+        }} style={styles.image} /></Pressable>
       </View>
       <View style={styles.inputContainer}>
         <Text style={styles.label}>Name</Text>
@@ -17,7 +22,9 @@ const UserProfileScreen = () => {
         <TextInput style={styles.input} value={address} onChangeText={setAddress} placeholder="Enter your address" />
       </View>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Next</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI13");
+      }}><Text style={styles.buttonText}>Next</Text></Pressable>
       </TouchableOpacity>
     </View>;
 };

@@ -1,3 +1,4 @@
+import { Pressable } from "react-native";
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
 
@@ -29,7 +30,7 @@ const UploadDocumentsScreen = () => {
         <Text style={styles.submitButtonText}>Submit</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.nextButton} onPress={() => handleNext()}>
-        <Text style={styles.nextButtonText}>Next</Text>
+        <Pressable><Text style={styles.nextButtonText}>Next</Text></Pressable>
       </TouchableOpacity>
     </View>;
 };
