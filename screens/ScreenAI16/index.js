@@ -1,3 +1,4 @@
+import { Pressable } from "react-native";
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, FlatList } from 'react-native';
 
@@ -31,7 +32,7 @@ const truckDriverNegotiationScreen = () => {
   }) => <View style={styles.offerContainer}>
       <Text style={styles.offerText}>${item.price}</Text>
       <TouchableOpacity style={styles.acceptButton} onPress={() => handleAccept(item.id)}>
-        <Text style={styles.buttonText}>Accept</Text>
+        <Pressable><Text style={styles.buttonText}>Accept</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.rejectButton} onPress={() => handleReject(item.id)}>
         <Text style={styles.buttonText}>Reject</Text>

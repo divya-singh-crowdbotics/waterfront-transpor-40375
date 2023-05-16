@@ -25,7 +25,9 @@ const TruckDriverJobDetailsScreen = () => {
       </View>
       <View style={styles.buttonsContainer}>
         <TouchableOpacity style={styles.acceptButton}>
-          <Text style={styles.buttonText}>Accept Job</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI17");
+        }}><Text style={styles.buttonText}>Accept Job</Text></Pressable>
         </TouchableOpacity>
         <TouchableOpacity style={styles.rejectButton}>
           <Text style={styles.buttonText}>Reject Job</Text>
