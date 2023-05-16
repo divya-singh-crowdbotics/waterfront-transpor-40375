@@ -1,7 +1,9 @@
-import React from 'react';
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native';
 
 const JobsScreen = () => {
+  const navigation = useNavigation();
   return <View style={styles.container}>
       <View style={styles.header}>
         <Image source={{
@@ -24,7 +26,9 @@ const JobsScreen = () => {
         /* Dummy data for jobs list */
       }
         <Text style={styles.jobTitle}>Truck Driver</Text>
-        <Text style={styles.jobDescription}>We are looking for a truck driver with a valid CDL license and a clean driving record.</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI15");
+      }}><Text style={styles.jobDescription}>We are looking for a truck driver with a valid CDL license and a clean driving record.</Text></Pressable>
         <Text style={styles.jobLocation}>Location: New York, NY</Text>
         <Text style={styles.jobSalary}>Salary: $50,000 - $70,000 per year</Text>
       </View>
