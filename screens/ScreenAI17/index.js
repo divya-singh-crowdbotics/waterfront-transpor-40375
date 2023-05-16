@@ -175,7 +175,9 @@ const styles = StyleSheet.create({
   jobContainer: {
     paddingVertical: 20,
     borderBottomWidth: 1,
-    borderBottomColor: "#e5e5e5"
+    borderBottomColor: "#e5e5e5",
+    width: 290,
+    height: 86
   },
   jobDate: {
     fontSize: 16,
