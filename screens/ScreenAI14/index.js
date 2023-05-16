@@ -10,9 +10,11 @@ const JobsScreen = () => {
         uri: 'https://tinyurl.com/42evm3m3'
       }} style={styles.logo} />
         <TouchableOpacity style={styles.notificationIcon}>
-          <Image source={{
-          uri: 'https://tinyurl.com/42evm3m3'
-        }} style={styles.notificationIconImage} />
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI21");
+        }}><Image source={{
+            uri: 'https://tinyurl.com/42evm3m3'
+          }} style={styles.notificationIconImage} /></Pressable>
         </TouchableOpacity>
       </View>
       <View style={styles.searchBarContainer}>
@@ -37,10 +39,14 @@ const JobsScreen = () => {
           <Text style={styles.navigationButtonText}>Home - Jobs</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.navigationButton}>
-          <Text style={styles.navigationButtonText}>Map</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI19");
+        }}><Text style={styles.navigationButtonText}>Map</Text></Pressable>
         </TouchableOpacity>
         <TouchableOpacity style={styles.navigationButton}>
-          <Text style={styles.navigationButtonText}>Wallet</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI20");
+        }}><Text style={styles.navigationButtonText}>Wallet</Text></Pressable>
         </TouchableOpacity>
         <TouchableOpacity style={styles.navigationButton}>
           <Text style={styles.navigationButtonText}>History</Text>
