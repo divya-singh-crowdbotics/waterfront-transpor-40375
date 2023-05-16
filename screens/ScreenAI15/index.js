@@ -1,7 +1,9 @@
-import React from 'react';
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 
 const TruckDriverJobDetailsScreen = () => {
+  const navigation = useNavigation();
   return <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerText}>Truck Driver Job Details</Text>
@@ -29,7 +31,9 @@ const TruckDriverJobDetailsScreen = () => {
           <Text style={styles.buttonText}>Reject Job</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.negotiateButton}>
-          <Text style={styles.buttonText}>Negotiate Pay</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI16");
+        }}><Text style={styles.buttonText}>Negotiate Pay</Text></Pressable>
         </TouchableOpacity>
       </View>
     </View>;
