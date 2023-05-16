@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
+import { useState } from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 const truckDriverDetails = {
   name: "John Doe",
@@ -28,6 +30,7 @@ const truckDriverDetails = {
 };
 
 const TruckDriverDetailsScreen = () => {
+  const navigation = useNavigation();
   const [activeTab, setActiveTab] = useState("jobHistory");
 
   const handleTabPress = tab => {
@@ -84,7 +87,9 @@ const TruckDriverDetailsScreen = () => {
         </View>}
       <View style={styles.footer}>
         <TouchableOpacity style={styles.problemButton}>
-          <Text style={styles.problemButtonText}>Problem</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI18");
+        }}><Text style={styles.problemButtonText}>Problem</Text></Pressable>
         </TouchableOpacity>
         <TouchableOpacity style={styles.guideMeButton}>
           <Text style={styles.guideMeButtonText}>Guide Me</Text>
