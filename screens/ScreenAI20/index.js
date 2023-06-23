@@ -26,7 +26,9 @@ const WalletScreen = () => {
       }}><Text style={styles.buttonText}>Select Bank Account</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.historyButton}>
-        <Text style={styles.buttonText}>History</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI28");
+      }}><Text style={styles.buttonText}>History</Text></Pressable>
       </TouchableOpacity>
     </View>;
 };
