@@ -34,7 +34,9 @@ const SettingsScreen = () => {
       }}><Text style={styles.buttonText}>Terms and Conditions</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Change password</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI26");
+      }}><Text style={styles.buttonText}>Change password</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Support/ Send Feedback</Text>
