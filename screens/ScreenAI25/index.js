@@ -15,7 +15,9 @@ const SettingsScreen = () => {
         <Text style={styles.buttonText}>Edit Profile</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Drug tests screen</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI27");
+      }}><Text style={styles.buttonText}>Drug tests screen</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Manage payments</Text>
