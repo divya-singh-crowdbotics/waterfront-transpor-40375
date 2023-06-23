@@ -1,7 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 
 const WalletScreen = () => {
+  const navigation = useNavigation();
   const [amount, setAmount] = useState('');
   return <View style={styles.container}>
       <View style={styles.header}>
@@ -18,7 +21,9 @@ const WalletScreen = () => {
         <Text style={styles.buttonText}>Withdraw</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.selectBankButton}>
-        <Text style={styles.buttonText}>Select Bank Account</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI29");
+      }}><Text style={styles.buttonText}>Select Bank Account</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.historyButton}>
         <Text style={styles.buttonText}>History</Text>
