@@ -2,10 +2,13 @@ from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
 from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
-from django.contrib.auth import logout
 from rest_framework import serializers, status
 from rest_framework.decorators import action
 from django.contrib.auth import get_user_model
+from rest_auth.views import LogoutView
+from rest_framework.authentication import TokenAuthentication
+from rest_framework import permissions
+
 
 from home.api.v1.serializers import (
     SignupSerializer,
@@ -33,36 +36,8 @@ class LoginViewSet(ViewSet):
         token, created = Token.objects.get_or_create(user=user)
         user_serializer = UserSerializer(user)
         return Response({"token": token.key, "user": user_serializer.data})
-    
-
-class LogoutViewSet(ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-
-    @action(detail=False, methods=['post'])  
-    def logout(self,request):
-            try:
-                token = request.META.get('HTTP_AUTHORIZATION', '').split(' ')[-1]
-                try:
-                    token_obj = Token.objects.get(key=token)
-                except Token.DoesNotExist:
-                    return Response({'data': 'Log out failed' ,
-                                                'status':status.HTTP_400_BAD_REQUEST,
-                                                'message':'Token not exists'})
-                token_obj.delete()
-                try:
-                    logout(request)
-                except Exception as e:
-                    return Response({'data': e,
-                                            'status':status.HTTP_400_BAD_REQUEST,
-                                            'message':'Logout function Failed'})
-                return Response({'data': "User logged out",
-                                    'status':status.HTTP_200_OK,
-                                    'message':'User logged out'})
-
-              
-            except Exception as e:
-                return Response({'data': e,
-                                    'status':status.HTTP_400_BAD_REQUEST,
-                                    'message':'Logout Failed'}) 
-
+  
+class WaterFrontLogoutView(LogoutView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = (permissions.IsAuthenticated,)
+    http_method_names = ['post']
